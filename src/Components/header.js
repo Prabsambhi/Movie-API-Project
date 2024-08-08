@@ -9,11 +9,11 @@ const Header = () => {
 
       <img src={Logo} className="w-40" />
 
-      <div className="flex gap-12 text-xl font-semibold">
+      <div className="flex gap-12 text-xl font-semibold ">
         <NavLink
           to="/"
           className={({ isActive }) =>
-            ` ${isActive ? "text-white" : "text-zinc-500"}`
+            ` ${isActive ? "text-white" : "text-zinc-500"} font-lato tracking-wider`
           }
         >
           <button>Home</button>
@@ -21,7 +21,7 @@ const Header = () => {
         <NavLink
           to="/popular"
           className={({ isActive }) =>
-            ` ${isActive ? "text-white" : "text-zinc-500"}`
+            ` ${isActive ? "text-white" : "text-zinc-500"} font-lato tracking-wider`
           }
         >
           <button>Popular</button>
@@ -29,7 +29,7 @@ const Header = () => {
         <NavLink
           to="/upcoming"
           className={({ isActive }) =>
-            ` ${isActive ? "text-white" : "text-zinc-500"}`
+            ` ${isActive ? "text-white" : "text-zinc-500"} font-lato tracking-wider`
           }
         >
           <button>Upcoming</button>
