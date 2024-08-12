@@ -38,7 +38,7 @@ const Header = () => {
 
       <form className="flex items-center relative w-60">
         <input 
-        className="outline-none py-2 px-3 bg-opacity-20 bg-zinc-300 text-zinc-300 placeholder-zinc-300
+        className="outline-none py-2 px-3 bg-opacity-20 bg-zinc-300 text-zinc-300 placeholder-zinc-400
         rounded border-zinc-700 focus:border-zinc-600 border-2 w-full
         "
         placeholder="Search for movies....." />
