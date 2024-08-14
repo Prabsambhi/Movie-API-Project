@@ -6,13 +6,14 @@ import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 
 const Popular = () => {
-
   const [movies, setMovies] = useState([]);
   const popularMovieRef = useRef(null);
-  const apiKey = "2b9c224572d0da987d2651a9568d4afb";
+  const apiKey = "2b9c224572d0da987d2651a9568d4afb"
   const itemsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
   const location = useLocation();
+
+  console.log(process.env)
 
   const fetchPopularMovies = async () => {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
@@ -32,7 +33,7 @@ const Popular = () => {
   useEffect(() => {
     if (location.pathname === "/popular") {
       popularMovieRef.current.scrollIntoView({
-        behaviour: "smooth",
+        behavior: "smooth",
       });
     }
   }, [location]);
@@ -65,7 +66,8 @@ const Popular = () => {
         </h1>
         <div className="grid grid-cols-4 gap-y-20 gap-x-10 px-20 py-16">
           {paginatedEvents.map((movie) => (
-            <Link to={`/details/${movie.id}`} key={movie.id} >
+            <Link to={`/details/${movie.id}`}
+             key={movie.id}>
               <div className="flex flex-col bg-zinc-900 rounded-lg shadow shadow-zinc-950">
                 <div className="h-96 overflow-hidden">
                   <img
@@ -74,7 +76,7 @@ const Popular = () => {
                     className="opacity-80 object-cover h-full rounded-t-lg hover:scale-105 transition-all duration-300"
                   />
                 </div>
-                <div className="text-white py-4 px-3 font-lato text-center">
+                <div className="text-white py-4 px-3 font-lato text-center h-20">
                   {movie.title}
                 </div>
               </div>
@@ -102,6 +104,7 @@ const Popular = () => {
 
 export default Popular;
 
+// scroll to top
+// antd
 
-// 19995
-//
+// `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`
