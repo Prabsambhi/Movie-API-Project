@@ -13,8 +13,6 @@ const Popular = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const location = useLocation();
 
-  console.log(process.env)
-
   const fetchPopularMovies = async () => {
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 
@@ -108,3 +106,5 @@ export default Popular;
 // antd
 
 // `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`
+
+// https://via.placeholder.com/200x300?text=No+Image

@@ -32,17 +32,26 @@ const MovieDetails = () => {
     <Layout>
       <div className="flex items-center bg-zinc-950">
         <div className="w-1/3 scale-[0.6]">
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+          <img
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                : "https://via.placeholder.com/400x600?text=No+Image"
+            }
+          />
         </div>
         <div className="w-2/3 pl-10 pr-20 flex flex-col gap-5 ">
-          <div className="text-white text-3xl font-bold">{movie.title}</div>
-          <div className="text-white font-lato">{movie.overview}</div>
-          <div className="flex gap-4">
+          <div className="text-white text-4xl font-bold">{movie.title}</div>
+          <div className="text-white font-lato">{movie.overview }</div>
+          <div className="flex gap-4 w-min">
             {movie.genres?.map((item) => (
               <h1 className="text-white border px-3 py-2"> {item.name}</h1>
             ))}
           </div>
-          <div className="text-white font-lato "><span className="font-semibold mr-2">Release date: </span>{movie.release_date}</div>
+          <div className="text-white font-lato ">
+            <span className="font-semibold mr-2">Release date: </span>
+            {movie.release_date}
+          </div>
           <div className="flex items-center">
             <svg
               className="w-4 h-4 text-yellow-300 me-1"
@@ -61,8 +70,8 @@ const MovieDetails = () => {
               href="#"
               className="text-base font-medium text-zinc-100  dark:text-white "
             >
-             <span className="underline mr-2">{movie.vote_count}</span> 
-            reviews
+              <span className="underline mr-2">{movie.vote_count}</span>
+              reviews
             </h1>
           </div>
           {/* <Rating value={4}/> */}

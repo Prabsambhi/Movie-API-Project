@@ -4,6 +4,7 @@ import Home from "./Pages/home";
 import Popular from "./Pages/popular";
 import Upcoming from "./Pages/Upcoming";
 import MovieDetails from "./Pages/movieDetails";
+import SearchPage from "./Pages/searchPage";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/details/:id" element={<MovieDetails />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/upcoming" element={<Upcoming />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </>
   );
